@@ -3,6 +3,7 @@
 #include <chrono>
 #include <iomanip>
 #include "zodiac_signs.cpp"
+#include "others.cpp"
 
 struct TimeElapsed {
     int years;
@@ -59,10 +60,18 @@ int main() {
     std::cout << "Time Elapsed: " << days << " days, " << hours << " hours." << std::endl;
     std::cout << "Time Elapsed (in year month day): " << elapsed.years << " years, " << elapsed.months << " months, " << elapsed.days << " days." << std::endl;
     std::cout << "----------------------------------" << std::endl;
+   
+    // Determine the corresponding Hijri year
+    int hijriYear = determineHijriYear(target_tm);
+    std::cout << "Hijri Year: " << hijriYear << std::endl;
 
     // Determine the zodiac sign
     std::string zodiacSign = determineZodiacSign(day, month);
     std::cout << "Zodiac Sign: " << zodiacSign << std::endl;
+
+    // Determine the corresponding Chinese zodiac animal
+    std::string chineseZodiac = determineChineseZodiac(year);
+    std::cout << "Chinese Zodiac Sign: " << chineseZodiac << std::endl;
 
     return 0;
 }

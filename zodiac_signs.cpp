@@ -2,82 +2,32 @@
 
 std::string determineZodiacSign(int day, int month) {
     std::string zodiacSign;
-    switch (month) {
-        case 1:
-            if (day >= 20)
-                zodiacSign = "Aquarius";
-            else
-                zodiacSign = "Capricorn";
-            break;
-        case 2:
-            if (day >= 19)
-                zodiacSign = "Pisces";
-            else
-                zodiacSign = "Aquarius";
-            break;
-        case 3:
-            if (day >= 21)
-                zodiacSign = "Aries";
-            else
-                zodiacSign = "Pisces";
-            break;
-        case 4:
-            if (day >= 20)
-                zodiacSign = "Taurus";
-            else
-                zodiacSign = "Aries";
-            break;
-        case 5:
-            if (day >= 21)
-                zodiacSign = "Gemini";
-            else
-                zodiacSign = "Taurus";
-            break;
-        case 6:
-            if (day >= 21)
-                zodiacSign = "Cancer";
-            else
-                zodiacSign = "Gemini";
-            break;
-        case 7:
-            if (day >= 23)
-                zodiacSign = "Leo";
-            else
-                zodiacSign = "Cancer";
-            break;
-        case 8:
-            if (day >= 23)
-                zodiacSign = "Virgo";
-            else
-                zodiacSign = "Leo";
-            break;
-        case 9:
-            if (day >= 23)
-                zodiacSign = "Libra";
-            else
-                zodiacSign = "Virgo";
-            break;
-        case 10:
-            if (day >= 23)
-                zodiacSign = "Scorpio";
-            else
-                zodiacSign = "Libra";
-            break;
-        case 11:
-            if (day >= 22)
-                zodiacSign = "Sagittarius";
-            else
-                zodiacSign = "Scorpio";
-            break;
-        case 12:
-            if (day >= 22)
-                zodiacSign = "Capricorn";
-            else
-                zodiacSign = "Sagittarius";
-            break;
-        default:
-            zodiacSign = "Invalid Date";
-            break;
+
+    if ((month == 1 && day >= 20) || (month == 2 && day <= 18)) {
+        zodiacSign = "Aquarius";
+    } else if ((month == 2 && day >= 19) || (month == 3 && day <= 20)) {
+        zodiacSign = "Pisces";
+    } else if ((month == 3 && day >= 21) || (month == 4 && day <= 19)) {
+        zodiacSign = "Aries";
+    } else if ((month == 4 && day >= 20) || (month == 5 && day <= 20)) {
+        zodiacSign = "Taurus";
+    } else if ((month == 5 && day >= 21) || (month == 6 && day <= 20)) {
+        zodiacSign = "Gemini";
+    } else if ((month == 6 && day >= 21) || (month == 7 && day <= 22)) {
+        zodiacSign = "Cancer";
+    } else if ((month == 7 && day >= 23) || (month == 8 && day <= 22)) {
+        zodiacSign = "Leo";
+    } else if ((month == 8 && day >= 23) || (month == 9 && day <= 22)) {
+        zodiacSign = "Virgo";
+    } else if ((month == 9 && day >= 23) || (month == 10 && day <= 22)) {
+        zodiacSign = "Libra";
+    } else if ((month == 10 && day >= 23) || (month == 11 && day <= 21)) {
+        zodiacSign = "Scorpio";
+    } else if ((month == 11 && day >= 22) || (month == 12 && day <= 21)) {
+        zodiacSign = "Sagittarius";
+    } else {
+        zodiacSign = "Capricorn";
     }
+
     return zodiacSign;
 }
