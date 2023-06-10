@@ -16,13 +16,13 @@ This is a simple C++ console application that calculates the elapsed days betwee
 
 ## Usage
 
-1. Clone the repository:
+Clone the repository:
 
    ```shell
-   git clone https://github.com/your-username/date-calculation.git
-Compile the code:
+git clone https://github.com/618t/day-finder.git
 
-
+Build the project:
+cd day-finder
 g++ main.cpp zodiac_signs.cpp others.cpp -o dayfinder
 
 Run the executable:
