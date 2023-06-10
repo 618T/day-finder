@@ -1,50 +1,53 @@
-# Date Calculation
+# Date Calculator
 
-This C++ program calculates the time elapsed between a user-entered date and the current date. It provides information such as the number of days, hours, and years that have passed.
+This program calculates the time elapsed between a given date and the current date. It also determines the zodiac sign based on the date of birth.
+
+## Table of Contents
+- [Description](#description)
+- [Features](#features)
+- [Usage](#usage)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [License](#license)
+
+## Description
+
+This C++ program allows users to input a date (day, month, year) and calculates the time elapsed between that date and the current date. It displays the time elapsed in days, hours, and years, months, days. Additionally, it determines the zodiac sign based on the given date of birth.
 
 ## Features
 
-- Get date input from the user (day, month, year).
-- Calculate the time elapsed between the entered date and the current date.
-- Display the entered date and the current date.
-- Display the time elapsed in days and hours.
-- Calculate and display the time elapsed in years, months, and days.
-- Handle leap years and varying month lengths correctly.
+- Calculate the time elapsed between a given date and the current date
+- Display the time elapsed in days, hours, and years, months, days
+- Determine the zodiac sign based on the date of birth
 
-## Getting Started
+## Usage
 
-### Prerequisites
+1. Enter the date in the format "day month year", for example: "10 06 2000".
+2. The program will display the entered date and the current date.
+3. It will calculate and display the time elapsed in days and hours.
+4. It will also display the time elapsed in years, months, and days.
+5. Finally, it will determine and display the zodiac sign based on the date of birth.
 
-- C++ compiler (supporting C++11 or later)
-- G++ (for building the project)
+## Dependencies
 
-### Building and Running the Program
+This program requires the following dependencies:
 
-1. Clone the repository:
+- C++ compiler supporting C++11 or later
+- Standard C++ libraries
+- Standard C libraries
 
-git clone https://github.com/618t/day-finder.git
+## Installation
 
+To use this program, follow these steps:
 
-2. Build the project:
+1. Clone the repository: `git clone https://github.com/618T/day-finder`
+2. Change directory to the project folder: `cd dday-finder`
+3. Compile the source code: `g++ main.cpp -o day-finder`
+4. Run the program: `./day-finder`
 
-cd day-finder
-
-g++ main.cpp -o main
-
-3. Run the program:
-
-./main
-
-4. Follow the on-screen instructions to enter the date and view the time elapsed.
-
-## Example Usage
-
-Enter the date (day month year, For example: 10 06 2000): 10 06 2000
-Entered Date: 10.06.2000
-Current Date: 10.06.2023
-Time Elapsed: 6045 days, 18 hours.
-Time Elapsed (in year month day): 23 years, 0 months, 5 days.
+Make sure you have a C++ compiler installed on your system.
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
+
