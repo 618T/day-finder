@@ -1,53 +1,36 @@
-# Date Calculator
+# Date Calculation Application
 
-This program calculates the time elapsed between a given date and the current date. It also determines the zodiac sign based on the date of birth.
-
-## Table of Contents
-- [Description](#description)
-- [Features](#features)
-- [Usage](#usage)
-- [Dependencies](#dependencies)
-- [Installation](#installation)
-- [License](#license)
-
-## Description
-
-This C++ program allows users to input a date (day, month, year) and calculates the time elapsed between that date and the current date. It displays the time elapsed in days, hours, and years, months, days. Additionally, it determines the zodiac sign based on the given date of birth.
+This is a simple C++ console application that calculates the elapsed days between a given date and the current date. It also provides additional features such as determining the zodiac sign, Hijri year, and Chinese zodiac sign associated with the given date.
 
 ## Features
 
-- Calculate the time elapsed between a given date and the current date
-- Display the time elapsed in days, hours, and years, months, days
-- Determine the zodiac sign based on the date of birth
+- Calculate the number of days elapsed between a given date and the current date.
+- Determine the zodiac sign based on the given date.
+- Determine the corresponding Hijri year for the given date.
+- Determine the Chinese zodiac sign associated with the given date.
+
+## Requirements
+
+- C++ compiler
+- Standard Library
 
 ## Usage
 
-1. Enter the date in the format "day month year", for example: "10 06 2000".
-2. The program will display the entered date and the current date.
-3. It will calculate and display the time elapsed in days and hours.
-4. It will also display the time elapsed in years, months, and days.
-5. Finally, it will determine and display the zodiac sign based on the date of birth.
+1. Clone the repository:
 
-## Dependencies
+   ```shell
+   git clone https://github.com/your-username/date-calculation.git
+Compile the code:
 
-This program requires the following dependencies:
 
-- C++ compiler supporting C++11 or later
-- Standard C++ libraries
-- Standard C libraries
+g++ main.cpp zodiac_signs.cpp others.cpp -o dayfinder
 
-## Installation
+Run the executable:
 
-To use this program, follow these steps:
+./dayfinder
+Follow the prompts and enter the date in the format "day month year" (e.g., 10 06 2000).
 
-1. Clone the repository: `git clone https://github.com/618T/day-finder`
-2. Change directory to the project folder: `cd dday-finder`
-3. Compile the source code: `g++ main.cpp -o day-finder`
-4. Run the program: `./day-finder`
+The program will display the elapsed days, zodiac sign, Hijri year, and Chinese zodiac sign associated with the given date.
 
-Make sure you have a C++ compiler installed on your system.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
+License
+This project is licensed under the MIT License.
