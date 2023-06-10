@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 #include <chrono>
+#include <iomanip>
 
 int calculateDayOfWeek(int q, int m, int k, int j) {
     int h;
@@ -18,7 +19,7 @@ std::string getDayOfWeek(int h) {
 int main() {
     // Get date input from the user
     std::string date;
-    std::cout << "Enter the date (day month year): ";
+    std::cout << "Enter the date (day month year, For example: 10 06 2023): ";
     std::getline(std::cin, date);
 
     int day, month, year;
@@ -47,6 +48,10 @@ int main() {
     int dayOfWeek = calculateDayOfWeek(day, month, year % 100, year / 100);
     std::string dayName = getDayOfWeek(dayOfWeek);
 
+    // Print the entered date and the current date
+    std::cout << "Current Date: " << std::put_time(now_tm, "%d.%m.%Y") << std::endl;
+    std::cout << "Entered Date: " << std::setfill('0') << std::setw(2) << day << "." << std::setfill('0') << std::setw(2) << month << "." << year << std::endl;
+    
     std::cout << "The entered date falls on a " << dayName << "." << std::endl;
     std::cout << "Number of days elapsed since today: " << diff_days << std::endl;
 
