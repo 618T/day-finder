@@ -24,11 +24,10 @@ This C++ program calculates the time elapsed between a user-entered date and the
 
 git clone https://github.com/618t/day-finder.git
 
-cd date-calculation
-
 
 2. Build the project:
 
+cd day-finder
 g++ main.cpp -o main
 
 3. Run the program:
