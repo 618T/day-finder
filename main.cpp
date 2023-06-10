@@ -1,4 +1,5 @@
 #include <iostream>
+#include <sstream>
 #include <chrono>
 
 int calculateDayOfWeek(int q, int m, int k, int j) {
@@ -16,13 +17,12 @@ std::string getDayOfWeek(int h) {
 
 int main() {
     // Get date input from the user
-    int year, month, day;
-    std::cout << "Year: ";
-    std::cin >> year;
-    std::cout << "Month: ";
-    std::cin >> month;
-    std::cout << "Day: ";
-    std::cin >> day;
+    std::string date;
+    std::cout << "Enter the date (day month year): ";
+    std::getline(std::cin, date);
+
+    int day, month, year;
+    std::stringstream(date) >> day >> month >> year;
 
     // Get current date
     std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
