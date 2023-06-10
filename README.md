@@ -28,6 +28,7 @@ git clone https://github.com/618t/day-finder.git
 2. Build the project:
 
 cd day-finder
+
 g++ main.cpp -o main
 
 3. Run the program:
