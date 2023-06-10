@@ -20,14 +20,20 @@ Clone the repository:
 
    ```shell
 git clone https://github.com/618t/day-finder.git
+```
 
 Build the project:
+   ```shell
 cd day-finder
 g++ main.cpp zodiac_signs.cpp others.cpp -o dayfinder
+```
 
 Run the executable:
 
+   ```shell
 ./dayfinder
+```
+
 Follow the prompts and enter the date in the format "day month year" (e.g., 10 06 2000).
 
 The program will display the elapsed days, zodiac sign, Hijri year, and Chinese zodiac sign associated with the given date.
