@@ -25,7 +25,7 @@ git clone https://github.com/618t/day-finder.git
 Build the project:
    ```shell
 cd day-finder
-g++ main.cpp zodiac_signs.cpp others.cpp -o dayfinder
+g++ main.cpp -o dayfinder
 ```
 
 Run the executable:
