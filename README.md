@@ -23,6 +23,7 @@ This C++ program calculates the time elapsed between a user-entered date and the
 1. Clone the repository:
 
 git clone https://github.com/618t/day-finder.git
+
 cd date-calculation
 
 
