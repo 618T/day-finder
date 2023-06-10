@@ -50,17 +50,14 @@ int main() {
     std::cout << "Current Date: " << std::put_time(std::localtime(&now_time), "%d.%m.%Y") << std::endl;
 
     // Print the time elapsed
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>(now - target);
-    int seconds = duration.count();
-    int minutes = seconds / 60;
-    seconds %= 60;
-    int hours = minutes / 60;
-    minutes %= 60;
-    int days = hours / 24;
-    hours %= 24;
+    auto duration = std::chrono::duration_cast<std::chrono::hours>(now - target);
+    int hours = duration.count() % 24;
+    int days = duration.count() / 24;
 
-    std::cout << "Time Elapsed: " << days << " days, " << hours << " hours, " << minutes << " minutes, " << seconds << " seconds." << std::endl;
-    std::cout << "Time Elapsed (in day month year): " << elapsed.days << " days, " << elapsed.months << " months, " << elapsed.years << " years." << std::endl;
+    std::cout << "----------------------------------" << std::endl;
+    std::cout << "Time Elapsed: " << days << " days, " << hours << " hours." << std::endl;
+    std::cout << "Time Elapsed (in year month day): " << elapsed.years << " years, " << elapsed.months << " months, " << elapsed.days << " days." << std::endl;
+    std::cout << "----------------------------------" << std::endl;
 
     return 0;
 }
