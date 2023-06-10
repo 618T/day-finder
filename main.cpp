@@ -2,6 +2,7 @@
 #include <sstream>
 #include <chrono>
 #include <iomanip>
+#include "zodiac_signs.cpp"
 
 struct TimeElapsed {
     int years;
@@ -22,24 +23,24 @@ TimeElapsed calculateTimeElapsed(const std::chrono::system_clock::time_point& st
 }
 
 int main() {
-    // Get date input from the user
-    std::string date;
     std::cout << "Enter the date (day month year, For example: 10 06 2000): ";
+    std::string date;
     std::getline(std::cin, date);
 
-    // Parse day, month, and year from the input string
+    std::stringstream ss(date);
     int day, month, year;
-    std::istringstream(date) >> day >> month >> year;
+    ss >> day >> month >> year;
 
-    // Get current date
-    auto now = std::chrono::system_clock::now();
+    // Get the current date and time
+    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
 
-    // Get the target date
-    std::tm target_tm = *std::localtime(new std::time_t{0});
+    // Convert the target date to a time_point
+    std::tm target_tm = {};
     target_tm.tm_mday = day;
     target_tm.tm_mon = month - 1;
     target_tm.tm_year = year - 1900;
-    std::chrono::system_clock::time_point target = std::chrono::system_clock::from_time_t(std::mktime(&target_tm));
+    std::time_t target_time = std::mktime(&target_tm);
+    std::chrono::system_clock::time_point target = std::chrono::system_clock::from_time_t(target_time);
 
     // Calculate the time elapsed
     TimeElapsed elapsed = calculateTimeElapsed(target, now);
@@ -58,6 +59,10 @@ int main() {
     std::cout << "Time Elapsed: " << days << " days, " << hours << " hours." << std::endl;
     std::cout << "Time Elapsed (in year month day): " << elapsed.years << " years, " << elapsed.months << " months, " << elapsed.days << " days." << std::endl;
     std::cout << "----------------------------------" << std::endl;
+
+    // Determine the zodiac sign
+    std::string zodiacSign = determineZodiacSign(day, month);
+    std::cout << "Zodiac Sign: " << zodiacSign << std::endl;
 
     return 0;
 }
