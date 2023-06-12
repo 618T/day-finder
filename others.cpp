@@ -5,10 +5,6 @@ int determineHijriYear(const std::tm& date) {
     int year = date.tm_year + 1900;
     int month = date.tm_mon + 1;
     int day = date.tm_mday;
-
-    // Gregoryen takvimden Hijri takvimine dönüşüm için gerekli hesaplamaları yapın
-    // İlgili algoritmayı kullanarak Hijri yılını bulun
-    // Örnek bir dönüşüm algoritması:
     int gregorianYear = year;
     int hijriYear = 0;
 
@@ -22,8 +18,6 @@ int determineHijriYear(const std::tm& date) {
 }
 
 std::string determineChineseZodiac(int year) {
-    // Çin takvimine göre hangi burç olduğunu bulun
-    // Örnek bir hesaplama algoritması:
     std::string chineseZodiac;
 
     switch ((year - 1900) % 12) {

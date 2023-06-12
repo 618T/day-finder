@@ -23,6 +23,37 @@ TimeElapsed calculateTimeElapsed(const std::chrono::system_clock::time_point& st
     return elapsed;
 }
 
+std::string getDayOfWeek(int day, int month, int year) {
+    if (month < 3) {
+        month += 12;
+        year -= 1;
+    }
+
+    int century = year / 100;
+    int yearOfCentury = year % 100;
+
+    int dayOfWeek = (day + 13 * (month + 1) / 5 + yearOfCentury + yearOfCentury / 4 + century / 4 - 2 * century) % 7;
+
+    switch (dayOfWeek) {
+        case 0:
+            return "Saturday";
+        case 1:
+            return "Sunday";
+        case 2:
+            return "Monday";
+        case 3:
+            return "Tuesday";
+        case 4:
+            return "Wednesday";
+        case 5:
+            return "Thursday";
+        case 6:
+            return "Friday";
+        default:
+            return "Invalid";
+    }
+}
+
 int main() {
     std::cout << "Enter the date (day month year, For example: 10 06 2000): ";
     std::string date;
@@ -47,6 +78,7 @@ int main() {
     TimeElapsed elapsed = calculateTimeElapsed(target, now);
 
     // Print the entered date and the current date
+    std::cout << "----------------------------------" << std::endl;
     std::cout << "Entered Date: " << std::setfill('0') << std::setw(2) << day << "." << std::setfill('0') << std::setw(2) << month << "." << year << std::endl;
     std::time_t now_time = std::chrono::system_clock::to_time_t(now);
     std::cout << "Current Date: " << std::put_time(std::localtime(&now_time), "%d.%m.%Y") << std::endl;
@@ -55,12 +87,11 @@ int main() {
     auto duration = std::chrono::duration_cast<std::chrono::hours>(now - target);
     int hours = duration.count() % 24;
     int days = duration.count() / 24;
-
     std::cout << "----------------------------------" << std::endl;
     std::cout << "Time Elapsed: " << days << " days, " << hours << " hours." << std::endl;
     std::cout << "Time Elapsed (in year month day): " << elapsed.years << " years, " << elapsed.months << " months, " << elapsed.days << " days." << std::endl;
     std::cout << "----------------------------------" << std::endl;
-   
+
     // Determine the corresponding Hijri year
     int hijriYear = determineHijriYear(target_tm);
     std::cout << "Hijri Year: " << hijriYear << std::endl;
@@ -72,6 +103,10 @@ int main() {
     // Determine the corresponding Chinese zodiac animal
     std::string chineseZodiac = determineChineseZodiac(year);
     std::cout << "Chinese Zodiac Sign: " << chineseZodiac << std::endl;
+
+    // Determine the day of the week
+    std::string dayOfWeek = getDayOfWeek(day, month, year);
+    std::cout << "Day of the Week: " << dayOfWeek << std::endl;
 
     return 0;
 }
