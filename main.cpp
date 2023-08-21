@@ -108,5 +108,11 @@ int main() {
     std::string dayOfWeek = getDayOfWeek(day, month, year);
     std::cout << "Day of the Week: " << dayOfWeek << std::endl;
 
+    if (year % 4 == 0) {
+        std::cout << "----------------------------------" << std::endl;
+        std::cout << "Leap year: yes" << std::endl;
+    }
+    else {std::cout << "----------------------------------" << std::endl;
+        std::cout << "Leap year: no" << std::endl;}
     return 0;
 }
